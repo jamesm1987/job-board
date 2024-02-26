@@ -50,8 +50,14 @@ class User extends Authenticatable
         return $this->hasRole('super_admin') && $this->hasVerifiedEmail();
     }
 
+    public function franchise()
+    {
+        return $this->belongsTo(Franchise::class);
+    }
+
     public function jobs()
     {
         return $this->hasMany(Job::class);
     }
+
 }

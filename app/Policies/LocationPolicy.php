@@ -60,7 +60,7 @@ class LocationPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Location $location
+     * @param  \App\Models\Location  $location
      * @return bool
      */
     public function delete(User $user, Location $location): bool
@@ -88,7 +88,7 @@ class LocationPolicy
      */
     public function forceDelete(User $user, Location $location): bool
     {
-        return $user->can('{{ ForceDelete }}');
+        return $user->can('force_delete_location');
     }
 
     /**
@@ -99,7 +99,7 @@ class LocationPolicy
      */
     public function forceDeleteAny(User $user): bool
     {
-        return $user->can('{{ ForceDeleteAny }}');
+        return $user->can('force_delete_any_location');
     }
 
     /**
@@ -111,7 +111,7 @@ class LocationPolicy
      */
     public function restore(User $user, Location $location): bool
     {
-        return $user->can('{{ Restore }}');
+        return $user->can('restore_location');
     }
 
     /**
@@ -122,7 +122,7 @@ class LocationPolicy
      */
     public function restoreAny(User $user): bool
     {
-        return $user->can('{{ RestoreAny }}');
+        return $user->can('restore_any_location');
     }
 
     /**
@@ -134,7 +134,7 @@ class LocationPolicy
      */
     public function replicate(User $user, Location $location): bool
     {
-        return $user->can('{{ Replicate }}');
+        return $user->can('replicate_location');
     }
 
     /**
@@ -145,7 +145,7 @@ class LocationPolicy
      */
     public function reorder(User $user): bool
     {
-        return $user->can('{{ Reorder }}');
+        return $user->can('reorder_location');
     }
 
 }

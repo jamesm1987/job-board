@@ -13,6 +13,7 @@ use App\Enum\JobTimeOfDay;
 class Job extends Model
 {
     use HasFactory, SoftDeletes;
+    
     protected $fillable = [
         'title',
         'location_id',

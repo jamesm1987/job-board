@@ -10,11 +10,6 @@ class JobPolicy
 {
     use HandlesAuthorization;
 
-    public function viewAll(User $user): bool
-    {
-        return $user->can('view_any_job');
-    }
-    
     /**
      * Determine whether the user can view any models.
      *
@@ -35,7 +30,7 @@ class JobPolicy
      */
     public function view(User $user, Job $job): bool
     {
-        return $user->can('view_job') && $job->creator === $user->id;
+        return $user->can('view_job');
     }
 
     /**
@@ -93,7 +88,7 @@ class JobPolicy
      */
     public function forceDelete(User $user, Job $job): bool
     {
-        return $user->can('{{ ForceDelete }}');
+        return $user->can('force_delete_job');
     }
 
     /**
@@ -104,7 +99,7 @@ class JobPolicy
      */
     public function forceDeleteAny(User $user): bool
     {
-        return $user->can('{{ ForceDeleteAny }}');
+        return $user->can('force_delete_any_job');
     }
 
     /**
@@ -116,7 +111,7 @@ class JobPolicy
      */
     public function restore(User $user, Job $job): bool
     {
-        return $user->can('{{ Restore }}');
+        return $user->can('restore_job');
     }
 
     /**
@@ -127,7 +122,7 @@ class JobPolicy
      */
     public function restoreAny(User $user): bool
     {
-        return $user->can('{{ RestoreAny }}');
+        return $user->can('restore_any_job');
     }
 
     /**
@@ -139,7 +134,7 @@ class JobPolicy
      */
     public function replicate(User $user, Job $job): bool
     {
-        return $user->can('{{ Replicate }}');
+        return $user->can('replicate_job');
     }
 
     /**
@@ -150,6 +145,7 @@ class JobPolicy
      */
     public function reorder(User $user): bool
     {
-        return $user->can('{{ Reorder }}');
+        return $user->can('reorder_job');
     }
+
 }
