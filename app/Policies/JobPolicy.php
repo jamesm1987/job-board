@@ -9,6 +9,11 @@ use Illuminate\Auth\Access\HandlesAuthorization;
 class JobPolicy
 {
     use HandlesAuthorization;
+
+    public function viewAll(User $user): bool
+    {
+        return $user->can('view_any_job');
+    }
     
     /**
      * Determine whether the user can view any models.

@@ -13,15 +13,6 @@ enum JobTimeOfDay: string implements HasLabel
     public function getLabel(): ?string
     {
         return $this->name;
-        
-        // or
-    
-        return match ($this) {
-            self::EARLY_AM => 'Early AM',
-            self::DAYTIME => 'Daytime',
-            self::EVENING => 'Evening',
-            self::NIGHT => 'Night',
-        };
     }
 
 }
