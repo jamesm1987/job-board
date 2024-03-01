@@ -18,7 +18,6 @@ class Job extends Model
         'title',
         'location_id',
         'creator_id',
-        'slug',
         'hours',
         'time_of_day',
         'location',

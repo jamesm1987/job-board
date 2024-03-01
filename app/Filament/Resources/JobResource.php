@@ -36,7 +36,7 @@ class JobResource extends Resource implements HasShieldPermissions
         return [
             'view',
             'view_any',
-            'view_all',
+            'view_own',
             'create',
             'update',
             'restore',
@@ -52,7 +52,7 @@ class JobResource extends Resource implements HasShieldPermissions
 
     public static function getEloquentQuery(): Builder
     {
-        if (auth()->user()->can('view_all_job')) {
+        if (auth()->user()->can('view_any_job')) {
             return parent::getEloquentQuery();
         }
         

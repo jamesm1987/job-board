@@ -32,12 +32,12 @@ class UserResource extends Resource
     {
         return $form
             ->schema([
-            //     TextInput::make('name')->required(),
-            //     TextInput::make('email')->required()->email(),
-            //     TextInput::make('password')->required()->password()->revealable()->maxLength(255),
-            //     CheckboxList::make('roles')->relationship('roles', 'name')
-            //         ->searchable()
-            //         ->reactive(),
+                TextInput::make('name')->required(),
+                TextInput::make('email')->required()->email(),
+                TextInput::make('password')->required()->password()->revealable()->maxLength(255),
+                CheckboxList::make('roles')->relationship('roles', 'name')
+                    ->searchable()
+                    // ->reactive(),
         
             //         Select::make('franchise_id')
             //         ->label('Franchise')
