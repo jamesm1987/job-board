@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LocationController;
+use App\Http\Controllers\JobController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/{location:slug}', [LocationController::class, 'index'])->name('location-jobs');
+
+
+Route::get('/{location:slug}', LocationController::class)->name('location-jobs');
+Route::get('/job/{job:slug}', [JobController::class, 'show'])->name('job');
