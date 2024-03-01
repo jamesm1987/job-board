@@ -28,9 +28,9 @@ class JobObserver
 
     public function updating(Job $job): void
     {
-        // If the title is being updated, update the slug accordingly
+        
         if ($job->isDirty('title')) {
-            $job->slug = $this->generateUniqueSlug($job->title, $job->id);
+            $job->slug = $this->generateUniqueSlug($job->title);
         }
     }
     
