@@ -61,7 +61,7 @@ class AreaResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListLAreas::route('/'),
+            'index' => Pages\ListAreas::route('/'),
             'create' => Pages\CreateArea::route('/create'),
             'edit' => Pages\EditArea::route('/{record}/edit'),
         ];
