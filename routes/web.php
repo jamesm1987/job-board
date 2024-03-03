@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LocationController;
+use App\Http\Controllers\AreaController;
 use App\Http\Controllers\JobController;
 
 /*
@@ -21,5 +21,5 @@ Route::get('/', function () {
 
 
 
-Route::get('/{location:slug}', LocationController::class)->name('location-jobs');
+Route::get('/{area:slug}', AreaController::class)->name('area-jobs');
 Route::get('/job/{job}', [JobController::class, 'show'])->name('job');

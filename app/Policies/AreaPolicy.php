@@ -3,10 +3,10 @@
 namespace App\Policies;
 
 use App\Models\User;
-use App\Models\Location;
+use App\Models\Area;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class LocationPolicy
+class AreaPolicy
 {
     use HandlesAuthorization;
 
@@ -18,19 +18,19 @@ class LocationPolicy
      */
     public function viewAny(User $user): bool
     {
-        return $user->can('view_any_location');
+        return $user->can('view_any_area');
     }
 
     /**
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Location  $location
+     * @param  \App\Models\Area  $area
      * @return bool
      */
-    public function view(User $user, Location $location): bool
+    public function view(User $user, Area $area): bool
     {
-        return $user->can('view_location');
+        return $user->can('view_area');
     }
 
     /**
@@ -41,31 +41,31 @@ class LocationPolicy
      */
     public function create(User $user): bool
     {
-        return $user->can('create_location');
+        return $user->can('create_area');
     }
 
     /**
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Location  $location
+     * @param  \App\Models\Area  $area
      * @return bool
      */
-    public function update(User $user, Location $location): bool
+    public function update(User $user, Area $area): bool
     {
-        return $user->can('update_location');
+        return $user->can('update_area');
     }
 
     /**
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Location  $location
+     * @param  \App\Models\Area  $area
      * @return bool
      */
-    public function delete(User $user, Location $location): bool
+    public function delete(User $user, Area $area): bool
     {
-        return $user->can('delete_location');
+        return $user->can('delete_area');
     }
 
     /**
@@ -76,19 +76,19 @@ class LocationPolicy
      */
     public function deleteAny(User $user): bool
     {
-        return $user->can('delete_any_location');
+        return $user->can('delete_any_area');
     }
 
     /**
      * Determine whether the user can permanently delete.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Location  $location
+     * @param  \App\Models\Area  $area
      * @return bool
      */
-    public function forceDelete(User $user, Location $location): bool
+    public function forceDelete(User $user, Area $area): bool
     {
-        return $user->can('force_delete_location');
+        return $user->can('force_delete_area');
     }
 
     /**
@@ -99,19 +99,19 @@ class LocationPolicy
      */
     public function forceDeleteAny(User $user): bool
     {
-        return $user->can('force_delete_any_location');
+        return $user->can('force_delete_any_area');
     }
 
     /**
      * Determine whether the user can restore.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Location  $location
+     * @param  \App\Models\Area  $area
      * @return bool
      */
-    public function restore(User $user, Location $location): bool
+    public function restore(User $user, Area $area): bool
     {
-        return $user->can('restore_location');
+        return $user->can('restore_area');
     }
 
     /**
@@ -122,19 +122,19 @@ class LocationPolicy
      */
     public function restoreAny(User $user): bool
     {
-        return $user->can('restore_any_location');
+        return $user->can('restore_any_area');
     }
 
     /**
      * Determine whether the user can replicate.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Location  $location
+     * @param  \App\Models\Area  $area
      * @return bool
      */
-    public function replicate(User $user, Location $location): bool
+    public function replicate(User $user, Area $area): bool
     {
-        return $user->can('replicate_location');
+        return $user->can('replicate_area');
     }
 
     /**
@@ -145,7 +145,7 @@ class LocationPolicy
      */
     public function reorder(User $user): bool
     {
-        return $user->can('reorder_location');
+        return $user->can('reorder_area');
     }
 
 }

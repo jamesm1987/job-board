@@ -16,7 +16,7 @@ class Job extends Model
     
     protected $fillable = [
         'title',
-        'location_id',
+        'area_id',
         'creator_id',
         'hours',
         'time_of_day',
@@ -37,8 +37,8 @@ class Job extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function location()
+    public function area()
     {
-        return $this->belongsTo(Location::class, 'location_id');
+        return $this->belongsTo(Area::class, 'area_id');
     }
 }
