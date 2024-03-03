@@ -21,20 +21,6 @@ class JobPolicy
         return $user->can('view_any_job');
     }
 
-
-    /**
-     * Determine whether the user can view own models.
-     *
-     * @param  \App\Models\User  $user
-     * @param  \App\Models\Job  $job
-     * @return bool
-     */
-    public function viewOwn(User $user, Job $job): bool
-    {
-        return $user->can('view_own_job');
-    }
-
-
     /**
      * Determine whether the user can view the model.
      *

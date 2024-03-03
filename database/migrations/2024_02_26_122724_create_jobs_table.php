@@ -5,6 +5,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 use App\Models\Location;
+use App\Models\Franchise;
 
 return new class extends Migration
 {
@@ -16,7 +17,7 @@ return new class extends Migration
         Schema::create('jobs', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Location::class)->index();
-            $table->foreignId('creator_id')->references('id')->on('users')->index();
+            $table->foreignIdFor(Franchise::class)->index();
             $table->string('title');
             $table->string('slug')->unique();
             $table->string('hours');

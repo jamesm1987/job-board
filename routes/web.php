@@ -22,4 +22,4 @@ Route::get('/', function () {
 
 
 Route::get('/{location:slug}', LocationController::class)->name('location-jobs');
-Route::get('/job/{job:slug}', [JobController::class, 'show'])->name('job');
+Route::get('/job/{job}', [JobController::class, 'show'])->name('job');

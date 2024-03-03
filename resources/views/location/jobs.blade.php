@@ -7,7 +7,7 @@
         @forelse($jobs as $job)
             
             <p><strong>{{ $job->title }}</strong></p>
-            <a href="{{ route('job', $job->slug) }}">View Job</a>
+            <a href="{{ route('job', $job) }}">View Job</a>
 
             {{ $jobs->links() }}
             
